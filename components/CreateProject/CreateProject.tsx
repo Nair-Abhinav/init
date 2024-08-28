@@ -13,6 +13,7 @@ import { Button } from "../ui/button";
 import { Plus } from "lucide-react";
 import { Input } from "../ui/input";
 import { Label } from "../ui/label";
+import { url } from "@/utils/envVariables";
 
 type Project = {
   projectName: string | null;
@@ -41,10 +42,11 @@ const CreateProject = () => {
     setExpanded: (value: boolean) => void;
   };
 
+  const [open , setOpen] = useState(false);
+
   const pathname = usePathname();
   const [isHovered, setIsHovered] = useState(false);
 
-  // Function to handle image file and convert it to base64
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
@@ -56,14 +58,44 @@ const CreateProject = () => {
     }
   };
 
-  // Submit function to handle form submission
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     console.log("Project data:", project);
-    // You can add your form submission logic here, such as an API call
+    
+    try {
+      const response = await fetch(`http://localhost:3000/api/project/createProject`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(project),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to submit project data");
+      }
+
+      const result = await response.json();
+      console.log("Project successfully created:", result);
+
+      setProject({
+        projectName: null,
+        image: null,
+        description: null,
+        author: null,
+        date: new Date(),
+        technologies: null,
+        repository: null,
+      });
+
+      setExpanded(false);
+
+    } catch (error) {
+      console.error("Error submitting project:", error);
+    }
   };
 
   return (
-    <Dialog>
+    <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger>
         <Button
           className={`w-full font-medium py-5 duration-300 rounded-md ${
@@ -125,6 +157,7 @@ const CreateProject = () => {
                   }
                 />
               </div>
+
               {/* Technologies Input */}
               <div className="flex flex-col gap-1">
                 <Label htmlFor="technologies">Technologies</Label>

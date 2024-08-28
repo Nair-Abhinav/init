@@ -47,10 +47,10 @@ const Footer = () => {
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.5 }}
           >
-            We are manufacturers of soaps, surfactants, personal care products,
-            and pet care products. By providing effective and economical
-            cleaning solutions for yourself, your home, and your pets, we ensure
-            ultimate customer satisfaction.
+            Init.ai is a student chapter of the Information Technology
+            Department at Dwarkakdas J Sanghvi College of Engineering. It was
+            founded in 2017 with a mission to educate, inspire and help the
+            students to explore the field of Artificial Intelligence
           </motion.p>
           <div className="flex flex-col items-center gap-2">
             <motion.div
@@ -156,7 +156,7 @@ const Footer = () => {
             >
               <BadgeInfo /> About Us
             </motion.div>
-            <ContactUs/>
+            <ContactUs />
             <motion.div
               className="text-sm flex items-center justify-center gap-2 cursor-pointer hover:text-blue-500"
               initial={{ y: 50, opacity: 0 }}

@@ -102,7 +102,7 @@ const SideBar = () => {
             !expanded && "scale-0"
           }`}
         >
-          Tech
+          INIT.AI
         </h1>
       </div>
       <CreateProject />
