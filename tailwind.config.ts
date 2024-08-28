@@ -9,6 +9,11 @@ const config = {
     './src/**/*.{ts,tsx}',
 	],
   prefix: "",
+  fontFamily: {
+    zen: ["Zen Antique Soft", "sans-serif"],
+    yeseva: ["yeseva", "sans-serif"],
+    roboto: ["roboto", "sans-serif"],
+  },
   theme: {
     container: {
       center: true,
@@ -19,6 +24,28 @@ const config = {
     },
     extend: {
       colors: {
+        colorOne: "var(--color-one)",
+        colorOneLight: "var(--color-one-light)",
+        colorTwo: "var(--color-two)",
+        colorTwoLight: "var(--color-two-light)",
+        colorThree: "var(--color-three)",
+        colorThreeLight: "var(--color-three-light)",
+        colorFour: "var(--color-four)",
+        colorFourLight: "var(--color-four-light)",
+        colorFive: "var(--color-five)",
+        colorFiveLight: "var(--color-five-light)",
+
+        textbold: "var(--textbold)",
+        textlight: "var(--textlight)",
+
+        whiteblack: "var(--white-black)",
+
+        themeforeground: "var(--theme-foreground)",
+        themebackground: "var(--theme-background)",
+
+        themelight: "var(--theme-light)",
+        theme: "var(--theme)",
+
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

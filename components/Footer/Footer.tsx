@@ -22,7 +22,7 @@ import ContactUs from "./_components/ContactUs";
 const Footer = () => {
   const router = useRouter();
   return (
-    <div className="bg-themebackground md:bg-themeforeground w-[100vw] flex flex-col items-center xl:flex-row xl:items-start">
+    <div className="z-10 bg-themebackground md:bg-themeforeground w-[100vw] flex flex-col items-center xl:flex-row xl:items-start">
       <div className="flex flex-col md:flex-row">
         <div className="bg-themeforeground mx-4 mb-2 md:mx-0 md:mb-0 w-[92vw] md:w-[50vw] xl:w-[30vw] gap-3 py-5 flex flex-col items-center shadow-lg md:shadow-none rounded-xl md:rounded-none">
           <motion.div
@@ -34,10 +34,10 @@ const Footer = () => {
             <Link href="/">
               <Image
                 height={100}
-                width={200}
-                src="/nebula.png"
+                width={100}
+                src="/logo.jpg"
                 alt="logo"
-                className="rounded-full h-[60px] md:h-[70px] w-auto cursor-pointer"
+                className="cursor-pointer"
               />
             </Link>
           </motion.div>
@@ -236,7 +236,7 @@ const Footer = () => {
           <motion.iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d120571.89228897801!2d72.77861547013391!3d19.200808219868122!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c9d4c3ef9fbb%3A0xc50fa9c00a807647!2sNeechem%20Industries!5e0!3m2!1sen!2sin!4v1717803035093!5m2!1sen!2sin"
             loading="lazy"
-            className="rounded-2xl w-full aspect-4/3"
+            className="rounded-2xl w-full aspect-video"
             style={{ border: 0 }}
             initial={{ y: 50, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
